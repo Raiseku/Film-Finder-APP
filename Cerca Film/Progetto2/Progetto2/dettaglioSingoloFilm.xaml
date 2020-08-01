@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Progetto2.dettaglioSingoloFilm"
+             BackgroundImage="sfodoDettaglioFilm.png"
+             Title="Cinema Clev"
+             >
+
+    <ContentPage.Content>
+        <!-- Definisco la scrollview che permettera una corretta visualizzazione di tutti gli elementi-->
+        <ScrollView>
+            <!--Definisco uno stackLayout che permetterà di visualizzare i dettagli del film selezionato -->
+            <StackLayout>
+                <!-- Definisco una Label che conterrà il titolo del film -->
+                <Label x:Name="LabeltitoloFilm" HorizontalOptions="CenterAndExpand"
+                       FontFamily="Arial"
+                       FontSize="25"
+                       TextColor="AntiqueWhite"
+                       />
+
+                <!-- Definisco una Label che conterrà la data di rilascio del film -->
+                <Label x:Name="LabeldataRilascio" HorizontalOptions="CenterAndExpand"
+                       FontFamily="Arial"
+                       TextColor="AntiqueWhite"
+                       FontSize="25"/>
+
+                <!-- Definisco una Label che conterrà la durata del film -->
+                <Label x:Name="Labeldurata" HorizontalOptions="CenterAndExpand"
+                       FontFamily="Arial"
+                       TextColor="AntiqueWhite"
+                       FontSize="25"/>
+
+                <!-- Definisco una Label che conterrà la trama del film -->
+                <Label x:Name="Labeltrama" HorizontalOptions="CenterAndExpand"
+                       FontFamily="Arial"
+                       TextColor="AntiqueWhite"
+                       FontSize="25"/>
+                
+                <!-- Definisco una View che conterrà la locandina del film, la grandezza impostata è 500x500 -->
+                <Image x:Name="ImageLocandina" 
+                       HorizontalOptions="CenterAndExpand"
+                       WidthRequest="500"
+                       HeightRequest="500"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

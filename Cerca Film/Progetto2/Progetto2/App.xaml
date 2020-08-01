@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Questa classe viene utilizzata per mantenere informazioni globali -->
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Progetto2.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- E' possibile definire risorse che saranno condivise in tutta l'applicazione -->
+            <!-- In questo caso definisco una risorsa chiamata "Colore" che utilizzerò nei bottoni -->
+            <Color x:Key="RisorsaColore">#E7FDFF</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

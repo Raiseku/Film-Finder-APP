@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Progetto2.CercaFilm"
+             BackgroundImage="sfondoLista.png"
+             Title="Cinema Clev"
+             Visual="Material">
+
+<!-- Definisco il contenuto della pagina -->
+    <ContentPage.Content>
+        <!--Gli elementi saranno mostrati all'interno di uno stackLayout-->
+        <StackLayout>
+            <!--Definisco una progress bar ed il suo stile-->
+            <ProgressBar x:Name="progBar"
+                         WidthRequest="300"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         ProgressColor="Green"
+                         BackgroundColor="DarkGray">
+             </ProgressBar>
+
+            <!--Definisco una entry per l'inserimento della parola che l'utente vuole cercare -->
+            <Entry x:Name="nomeCercato" 
+                   Placeholder="Inserisci una parola"
+                   TextColor="AntiqueWhite"
+                   PlaceholderColor="AntiqueWhite"
+                   BackgroundColor="DarkGray"
+                   />
+            
+            <!--Definisco il bottone per avviare la ricerca-->
+            <Button x:Name="bottoneCerca" 
+                    Text="Cerca" 
+                    Clicked="bottoneCerca_Cliccato" 
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="{StaticResource RisorsaColore}"
+                    CornerRadius="20"
+                    FontSize="25"/>
+
+            <!-- Definisco la listview che conterrà la lista dei film.
+            I valori saranno impostati in base ad una lista chiamata ArrayListFilm composta da oggetti della classe Film.
+            Al tapping di un elemento si richiama il metodo listaFilm_ItemTapped. -->
+            <ListView x:Name="listaFilm" 
+                      ItemTapped="listaFilm_ItemTapped">
+
+                <!--Definisco il singolo elemento che compone la listView-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!-- Il valore di ogni cella è basato su quello dell'oggetto dentro la lista ArrayListFilm.
+                        Tramite Binding faccio in modo che quando la sorgente della ListView viene impostata a quella
+                        dell'ArrayListFilm allora per ogni film ottengo il titolo e la data d'uscita e lo mostro
+                        all'interno della rispettiva cella -->
+                        
+                        <!-- Il Binding permette di collegare le proprietà di due oggetti per fare in modo che il cambiamento
+                        in uno comporti anche il cambiamento nell'altro.-->
+                        
+                        <TextCell 
+                            Text="{Binding titoloFilm}" 
+                            Detail="{Binding dataUscita}"
+                            TextColor="White"
+                            DetailColor="AntiqueWhite"
+                            />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

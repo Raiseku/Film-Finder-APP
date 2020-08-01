@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Pagina di tipo ContentPage.
+    Tutti gli elementi all'interno di una pagina .xaml andranno ad essere renderizzati in base alla piattaforma
+    su cui viene eseguita l'applicazione. Ad esempio una <Label> rappresenterà una <TextView> in Android ed un
+    <TextBlock> in UWP. Per quanto riguarda gli sfondi delle pagine invece, va impostato l'attributo BackgroundImage
+    con il nome dell'immagine, e poi per ogni progetto vanno inserite le immagini nelle rispettive cartelle. In questo caso 
+    per Android le immagini sono state inserite all'interno della cartella 'drawable' mentre per UWP sono state inserite
+    dentro il progetto stesso.
+    -->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImage="sfondoMainPage.png"
+             x:Class="Progetto2.MainPage"
+             Title="Cinema Clev"
+             Visual="Material"
+             >
+
+    <!--Definisco una stackLayout per il posizionamento degli elementi all'interno della pagina-->
+    <StackLayout>
+        <!--Inserisco una label per il benvenuto-->
+        <Label Text="Benvenuto nel cinema Clev!" 
+               HorizontalOptions="CenterAndExpand"
+               TextColor="AntiqueWhite"
+               FontSize="25"
+               FontFamily="Arial"
+               FontAttributes="Bold"
+               VerticalOptions="CenterAndExpand" 
+               />
+
+        <!--Inserisco un bottone per cambiare pagina -->
+        <Button x:Name="Cerca_Film" 
+                HorizontalOptions="Center"
+                Text="Cerca Film" 
+                Clicked="Cerca_Film_Cliccato" 
+                VerticalOptions="CenterAndExpand" 
+                FontSize="25"
+                CornerRadius="20"
+                BackgroundColor="{StaticResource RisorsaColore}"
+                />
+    </StackLayout>
+</ContentPage>
